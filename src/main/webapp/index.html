@@ -1,0 +1,34 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+    <ul class="content">
+    </ul>
+<script>
+    function dynamicLoadings() {
+        for (i = 0; i < 20; i++) {
+            dynamicLoading($(".content"), i);
+        }
+    }
+
+    function dynamicLoading(contentNode, id) {
+        $.get("resources/data", { id: id })
+            .done(function(data) {
+                contentNode.append("<li>" + id +  " -> " + data + "</li>");
+            })
+            .fail(function(jqXHR, textStatus) {
+                contentNode.append("<li><em>FAILURE:</em> " + id +  " :: " + jqXHR.responseText  + "</li>");
+            });
+    }
+
+    $(document).ready(function () {
+        $.get("resources/init")
+            .done(function(data) {
+                $(".content").append("<li>init at: " + data + "</li>");
+            })
+            .then(dynamicLoadings);
+    });
+</script>
+</body>
+</html>
