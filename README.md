@@ -53,7 +53,7 @@ How to reproduce:
 - open your browser, clean `localhost` cookies
 - navigate to [https://localhost:8443/sessionid/index.html](https://localhost:8443/sessionid/index.html)
     - log into the app using: `user/u` 
-- stop wildly: `mvn clean wildfly:run`
+- stop wildly: `mvn clean wildfly:shutdown`
 
 Notice all `/data` calls fired asynchronously after the initial call to `/init`.
 
@@ -65,7 +65,7 @@ How to reproduce:
 - open your browser, clean `localhost` cookies
 - navigate to [https://localhost:8443/sessionid/time.html](https://localhost:8443/sessionid/time.html)
     - log into the app using: `user/u` 
-- stop wildly: `mvn clean wildfly:run`
+- stop wildly: `mvn clean wildfly:shutdown`
 
 Notice the sequential call to `/time` endpoint after the initial call to `/init` and before all `/data` asynchronous calls.
 This `/time` calls makes the regeneration of the JSESSIONID to occure before the `/data` are fired and thus those calls are performed using a stable JSESSIONID. 
@@ -80,7 +80,7 @@ How to reproduce:
 - open your browser, clean `localhost` cookies
 - navigate to [https://localhost:8443/sessionid-undertow/index.html](https://localhost:8443/sessionid-undertow/index.html)
     - log into the app using: `user/u` 
-- stop wildly: `mvn clean wildfly:run`
+- stop wildly: `mvn clean wildfly:shutdown`
 
 Notice no rewrite of the JSESSIONID occures as the extension is active.
 
