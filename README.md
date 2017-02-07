@@ -41,9 +41,9 @@ FAILURE: 14 :: no http session found for requested HTTP session id: p8Z-QlPSX_VB
 
 ## Scenarios
 
-- [standard SPA](#standard SPA): no modifications the bug occures everytime 
-- [stabilized JSESSIONID](stabilized JSESSION SPA): introduction of unecessary sequential businees call before firing multiple asynchronuous data load calls
-- [prevent sessionId change SPA](undertow servlet extension SPA): usage of an undertow ServletExtension to prevent new JSESSIONID to be generated  
+- [standard SPA](#standard-spa): no modifications the bug occures everytime 
+- [stabilized JSESSIONID](#stabilized-jsession-spa): introduction of unecessary sequential businees call before firing multiple asynchronuous data load calls
+- [prevent sessionId change SPA](#undertow-servlet-extension-spa): usage of an undertow ServletExtension to prevent new JSESSIONID to be generated  
 
 ### standard SPA
  
@@ -72,6 +72,7 @@ This `/time` calls makes the regeneration of the JSESSIONID to occure before the
 
 ### undertow servlet extension SPA
 
+In this scenario we use an undertow ServletExtension, [DoNotChangeSessionIdOnLogin ](src/main/java/com/agfa/sample/jee/control/undertow/DoNotChangeSessionIdOnLogin.java) to disable the _ChangeSessionIdOnLogin_ functionnality.
  
 How to reproduce:
 - start wildly: `mvn clean wildfly:run`
