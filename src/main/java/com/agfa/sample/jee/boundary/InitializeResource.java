@@ -33,7 +33,7 @@ public class InitializeResource {
         long id = generator.generateId();
 
         session.setAttribute(Constants.ID_KEY, Long.valueOf(id));
-        String message = String.format("[%s::%s] application id generated: %d", servletRequest.getRequestedSessionId(), session.getId(), id);
+        String message = String.format("/init [%s::%s] application id generated: %d", servletRequest.getRequestedSessionId(), session.getId(), id);
         LOGGER.info(message);
         return Response.ok().entity(message).build();
     }

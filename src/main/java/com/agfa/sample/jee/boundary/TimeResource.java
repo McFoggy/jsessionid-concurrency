@@ -32,7 +32,7 @@ public class TimeResource {
     public Response time() {
         HttpSession session = servletRequest.getSession();
 
-        String message = String.format("[%s::%s] it is %s", servletRequest.getRequestedSessionId(), session.getId(), ZonedDateTime.now().toString());
+        String message = String.format("/time [%s::%s] it is %s", servletRequest.getRequestedSessionId(), session.getId(), ZonedDateTime.now().toString());
         LOGGER.info(message);
         return Response.ok().entity(message).build();
     }

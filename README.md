@@ -15,28 +15,32 @@ Due to some race conditions on client side & to default JSESSIONID handling serv
 
 Here is an example of an execution of the SPA at [http://localhost:8443/sessionid/index.html](http://localhost:8443/sessionid/index.html)
 
+> The application logs/shows messages in which `[X::Y]` information correspond to:
+>  - _X_ the JSESSIONID received by the server, ie the one sent by the client (or null if none was received) 
+>  - _Y_ the JSESSIONID used by the server 
+
 ```
-init at: [null::p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-] application id generated: 2
-0 -> [p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-::KHKcbRFB-mQEps0lhPe1EzyVfloUD9PSf7kiGL9G] for client{0::2}, data initialized
-FAILURE: 4 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
-FAILURE: 3 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
-FAILURE: 7 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
-FAILURE: 8 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
-FAILURE: 11 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
-FAILURE: 12 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
-15 -> [KHKcbRFB-mQEps0lhPe1EzyVfloUD9PSf7kiGL9G::KHKcbRFB-mQEps0lhPe1EzyVfloUD9PSf7kiGL9G] for client{15::2}, data initialized
-16 -> [KHKcbRFB-mQEps0lhPe1EzyVfloUD9PSf7kiGL9G::KHKcbRFB-mQEps0lhPe1EzyVfloUD9PSf7kiGL9G] for client{16::2}, data initialized
-19 -> [KHKcbRFB-mQEps0lhPe1EzyVfloUD9PSf7kiGL9G::KHKcbRFB-mQEps0lhPe1EzyVfloUD9PSf7kiGL9G] for client{19::2}, data initialized
-FAILURE: 1 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
-18 -> [KHKcbRFB-mQEps0lhPe1EzyVfloUD9PSf7kiGL9G::KHKcbRFB-mQEps0lhPe1EzyVfloUD9PSf7kiGL9G] for client{18::2}, data initialized
-FAILURE: 2 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
-FAILURE: 6 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
-FAILURE: 9 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
-FAILURE: 13 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
-FAILURE: 10 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
-FAILURE: 5 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
-17 -> [KHKcbRFB-mQEps0lhPe1EzyVfloUD9PSf7kiGL9G::KHKcbRFB-mQEps0lhPe1EzyVfloUD9PSf7kiGL9G] for client{17::2}, data initialized
-FAILURE: 14 :: no http session found for requested HTTP session id: p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-
+init at: /init [null::QAYLSwZSSu2pDQMaxnkTAkzciteWKKV-3YDDpzpD] application id generated: 3
+0 -> /data [QAYLSwZSSu2pDQMaxnkTAkzciteWKKV-3YDDpzpD::Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7] data initialized for client{0} on app {3}
+FAILURE: 3 :: /data no http session found for requested HTTP session id: QAYLSwZSSu2pDQMaxnkTAkzciteWKKV-3YDDpzpD
+FAILURE: 1 :: /data no http session found for requested HTTP session id: QAYLSwZSSu2pDQMaxnkTAkzciteWKKV-3YDDpzpD
+FAILURE: 6 :: /data no http session found for requested HTTP session id: QAYLSwZSSu2pDQMaxnkTAkzciteWKKV-3YDDpzpD
+FAILURE: 2 :: /data no http session found for requested HTTP session id: QAYLSwZSSu2pDQMaxnkTAkzciteWKKV-3YDDpzpD
+FAILURE: 4 :: /data no http session found for requested HTTP session id: QAYLSwZSSu2pDQMaxnkTAkzciteWKKV-3YDDpzpD
+FAILURE: 8 :: /data no http session found for requested HTTP session id: QAYLSwZSSu2pDQMaxnkTAkzciteWKKV-3YDDpzpD
+FAILURE: 5 :: /data no http session found for requested HTTP session id: QAYLSwZSSu2pDQMaxnkTAkzciteWKKV-3YDDpzpD
+FAILURE: 7 :: /data no http session found for requested HTTP session id: QAYLSwZSSu2pDQMaxnkTAkzciteWKKV-3YDDpzpD
+10 -> /data [Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7::Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7] data initialized for client{10} on app {3}
+FAILURE: 9 :: /data no http session found for requested HTTP session id: QAYLSwZSSu2pDQMaxnkTAkzciteWKKV-3YDDpzpD
+13 -> /data [Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7::Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7] data initialized for client{13} on app {3}
+11 -> /data [Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7::Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7] data initialized for client{11} on app {3}
+14 -> /data [Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7::Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7] data initialized for client{14} on app {3}
+12 -> /data [Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7::Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7] data initialized for client{12} on app {3}
+16 -> /data [Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7::Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7] data initialized for client{16} on app {3}
+18 -> /data [Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7::Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7] data initialized for client{18} on app {3}
+19 -> /data [Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7::Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7] data initialized for client{19} on app {3}
+17 -> /data [Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7::Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7] data initialized for client{17} on app {3}
+15 -> /data [Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7::Kr6hXPeKMXHIHpSJYSHdYxGvhtbjtTbi9yXRWLb7] data initialized for client{15} on app {3}
 ```
 
 ## Scenarios
