@@ -13,7 +13,7 @@ When the app starts the following occures
 
 Due to some race conditions on client side & to default JSESSIONID handling server side (session id change on login) several business calls to `/data` can fail.
 
-Here is an example of an execution of the SPA at [https://localhost:8443/sessionid/index.html](https://localhost:8443/sessionid/index.html)
+Here is an example of an execution of the SPA at [http://localhost:8443/sessionid/index.html](http://localhost:8443/sessionid/index.html)
 
 ```
 init at: [null::p8Z-QlPSX_VBtwtt_xSWce8jdA_wefidNfpiYG3-] application id generated: 2
@@ -51,7 +51,7 @@ How to reproduce:
 - start wildly: `mvn clean wildfly:run`
 - deploy the app: `mvn wildfly:deploy`
 - open your browser, clean `localhost` cookies
-- navigate to [https://localhost:8443/sessionid/index.html](https://localhost:8443/sessionid/index.html)
+- navigate to [http://localhost:8443/sessionid/index.html](http://localhost:8443/sessionid/index.html)
     - log into the app using: `user/u` 
 - stop wildly: `mvn clean wildfly:shutdown`
 
@@ -63,7 +63,7 @@ How to reproduce:
 - start wildly: `mvn clean wildfly:run`
 - deploy the app: `mvn wildfly:deploy`
 - open your browser, clean `localhost` cookies
-- navigate to [https://localhost:8443/sessionid/time.html](https://localhost:8443/sessionid/time.html)
+- navigate to [http://localhost:8443/sessionid/time.html](http://localhost:8443/sessionid/time.html)
     - log into the app using: `user/u` 
 - stop wildly: `mvn clean wildfly:shutdown`
 
@@ -78,7 +78,7 @@ How to reproduce:
 - start wildly: `mvn clean wildfly:run`
 - deploy the app with undertow extension: `mvn -Pundertow wildfly:deploy`
 - open your browser, clean `localhost` cookies
-- navigate to [https://localhost:8443/sessionid-undertow/index.html](https://localhost:8443/sessionid-undertow/index.html)
+- navigate to [http://localhost:8443/sessionid-undertow/index.html](http://localhost:8443/sessionid-undertow/index.html)
     - log into the app using: `user/u` 
 - stop wildly: `mvn clean wildfly:shutdown`
 
