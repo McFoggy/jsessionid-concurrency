@@ -15,7 +15,7 @@ When the app starts the following occures
 
 Due to some race conditions on client side & to default JSESSIONID handling server side (session id change on login) several business calls to `/data` can fail.
 
-Here is an example of an execution of the SPA at [http://localhost:8443/sessionid/index.html](http://localhost:8443/sessionid/index.html)
+Here is an example of an execution of the SPA at [http://localhost:8080/sessionid/index.html](http://localhost:8080/sessionid/index.html)
 
 > The application logs/shows messages in which `[X::Y]` information correspond to:
 >  - _X_ the JSESSIONID received by the server, ie the one sent by the client (or null if none was received) 
@@ -57,7 +57,7 @@ How to reproduce:
 - start wildly: `mvn clean wildfly:run`
 - deploy the app: `mvn wildfly:deploy`
 - open your browser, clean `localhost` cookies
-- navigate to [http://localhost:8443/sessionid/index.html](http://localhost:8443/sessionid/index.html)
+- navigate to [http://localhost:8080/sessionid/index.html](http://localhost:8080/sessionid/index.html)
     - log into the app using: `user/u` 
 - stop wildly: `mvn clean wildfly:shutdown`
 
@@ -69,7 +69,7 @@ How to reproduce:
 - start wildly: `mvn clean wildfly:run`
 - deploy the app: `mvn wildfly:deploy`
 - open your browser, clean `localhost` cookies
-- navigate to [http://localhost:8443/sessionid/time.html](http://localhost:8443/sessionid/time.html)
+- navigate to [http://localhost:8080/sessionid/time.html](http://localhost:8080/sessionid/time.html)
     - log into the app using: `user/u` 
 - stop wildly: `mvn clean wildfly:shutdown`
 
@@ -84,7 +84,7 @@ How to reproduce:
 - start wildly: `mvn clean wildfly:run`
 - deploy the app with undertow extension: `mvn -Pundertow wildfly:deploy`
 - open your browser, clean `localhost` cookies
-- navigate to [http://localhost:8443/sessionid-undertow/index.html](http://localhost:8443/sessionid-undertow/index.html)
+- navigate to [http://localhost:8080/sessionid-undertow/index.html](http://localhost:8080/sessionid-undertow/index.html)
     - log into the app using: `user/u` 
 - stop wildly: `mvn clean wildfly:shutdown`
 
