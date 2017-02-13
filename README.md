@@ -3,6 +3,8 @@
 This project is used as a demo project for a javaee war based SPA application using secured endpoints
 and some HttpSession caching stuff.
 
+Problematic has been exposed in a [post](http://lists.jboss.org/pipermail/undertow-dev/2017-February/001879.html) to the undertow mailing list ; read more [here](http://lists.jboss.org/pipermail/undertow-dev/2017-February/001879.html).
+
 ## Problem description
 
 When the app starts the following occures
